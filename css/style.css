@@ -1,0 +1,443 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  background-image: linear-gradient(blue, green);
+}
+
+h1 {
+  font-weight: 800;
+  color: lime;
+  text-shadow: 1px 1px 1px white;
+  text-align: center;
+}
+
+h2 {
+  font-weight: 800;
+  color: yellow;
+  text-shadow: 1px 1px 1px white;
+  text-align: center;
+}
+
+h3 {
+  font-weight: 900;
+  color: yellow;
+  text-shadow: 1px 1px 1px black;
+  text-align: center;
+}
+
+/* MESSAGE */
+#message:after {
+  content: "";
+  animation: message 3.5s linear infinite;
+}
+
+@keyframes message {
+  0%,
+  100% {
+    content: "Save the planet!";
+    color: red;
+  }
+  35% {
+    content: "Save the planet!";
+    color: red;
+  }
+  50% {
+    content: "Be eco-friendly!";
+    color: lime;
+  }
+  85% {
+    content: "Be eco-friendly!";
+    color: lime;
+  }
+}
+
+/* CLOUD */
+#cloud {
+  width: 80px;
+  height: 50px;
+  top: 15px;
+  position: relative;
+  animation: cloud 15s infinite linear;
+  z-index: 0;
+}
+
+#shape {
+  position: absolute;
+  width: 140px;
+  height: 35px;
+  background: white;
+  border-radius: 100px;
+  z-index: 2;
+}
+
+#cloud:after,
+#cloud:before {
+  content: "";
+  position: absolute;
+  background: white;
+  z-index: 1;
+}
+
+#cloud:after {
+  width: 50px;
+  height: 50px;
+  top: -21px;
+  left: 39px;
+  border-radius: 100px;
+}
+
+#cloud:before {
+  width: 70px;
+  height: 70px;
+  top: -35px;
+  left: 80px;
+  border-radius: 200px;
+}
+
+@keyframes cloud {
+  0% {
+    right: 100%;
+  }
+  100% {
+    right: -100%;
+  }
+}
+
+/* WIND-TURBINE */
+#wind-turbine {
+  position: relative;
+  width: 197px;
+  height: 321px;
+  margin-top: 15%;
+  float: right;
+  animation: turbine-move 4s infinite linear;
+}
+
+@media (min-width: 768px) {
+  #wind-turbine {
+    margin-top: -10%;
+  }
+}
+
+@keyframes turbine-move {
+  0% {
+    right: -50%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+#turbine {
+  width: 195px;
+  height: 305px;
+  margin: auto;
+}
+
+#generator {
+  position: absolute;
+  top: 75px;
+  left: 45.5%;
+}
+
+#rotor {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background: lime;
+  border-radius: 50%;
+  animation: rotation 5s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.blade {
+  position: absolute;
+  width: 75px;
+  height: 10px;
+  top: 12px;
+  left: 18px;
+  background: lime;
+  border-radius: 0 24px 40px 0;
+  transform-origin: 0 8px;
+}
+
+.blade:after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  top: 1px;
+  left: 19px;
+  border-top: 20px solid lime;
+  border-right: 35px solid transparent;
+  border-left: 35px solid transparent;
+}
+
+.number1 {
+  transform: rotate(0deg);
+}
+
+.number2 {
+  transform: rotate(120deg);
+}
+
+.number3 {
+  transform: rotate(240deg);
+}
+
+#pole {
+  width: 5px;
+  margin: auto;
+  border-bottom: 246px solid lime;
+  border-right: 14px solid transparent;
+  border-left: 14px solid transparent;
+}
+
+/* ELECTRIC-CAR */
+#electric-car {
+  width: 100%;
+  height: 279px;
+}
+
+#street {
+  background-color: dimgrey;
+  width: 100%;
+  height: 75px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+#street-line {
+  position: relative;
+  width: 21%;
+  height: 5px;
+  top: 43%;
+  float: right;
+  background-color: lightyellow;
+  animation: street-line 2s infinite linear;
+}
+
+@keyframes street-line {
+  0% {
+    right: -50%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+/* end of road */
+#car {
+  width: 290px;
+  height: 170px;
+  margin: 0 auto;
+  margin-top: -190px;
+  z-index: 50;
+  animation: body-movement 5s linear infinite;
+}
+
+#front-wheel {
+  margin-left: 210px;
+}
+
+#rear-wheel {
+  margin-left: 21px;
+}
+
+#front-wheel,
+#rear-wheel {
+  position: absolute;
+  width: 41px;
+  height: 41px;
+  top: 110px;
+  border-radius: 50%;
+  border: 9px solid black;
+  background-color: lime;
+  z-index: 5;
+  animation: wheel-rotation 1s infinite linear;
+}
+
+@keyframes wheel-rotation {
+  25% {
+    transform: rotateZ(90deg);
+  }
+  50% {
+    transform: rotateZ(180deg);
+  }
+  75% {
+    transform: rotateZ(270deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+#wheel-spoke1,
+#wheel-spoke2,
+#wheel-spoke3 {
+  position: relative;
+  width: 8px;
+  height: 17px;
+  background-color: red;
+  border-radius: 50% 50% 50% 50%;
+}
+
+#wheel-spoke1 {
+  top: 12px;
+  left: 4px;
+  transform: rotateZ(90deg);
+}
+
+#wheel-spoke2 {
+  top: 5px;
+  left: 23px;
+  transform: rotateZ(330deg);
+}
+
+#wheel-spoke3 {
+  top: -32px;
+  left: 23px;
+  transform: rotateZ(210deg);
+}
+
+#car-body {
+  width: 290px;
+  height: 170px;
+  margin-top: -200px;
+  animation: body-movement 5s linear infinite;
+}
+
+@keyframes body-movement {
+  25% {
+    transform: translateY(7px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+#chassis {
+  position: relative;
+  width: 271px;
+  height: 70px;
+  left: 1px;
+  bottom: 31px;
+  margin: 0 auto;
+  background: lime;
+  border: 5px solid lime;
+  border-radius: 370px 750px 150px 150px;
+}
+
+#ceiling {
+  position: relative;
+  width: 187px;
+  height: 75px;
+  left: 34px;
+  top: 12px;
+  background-color: rgba(0, 0, 0, 0.15);
+  transform: rotateZ(-8deg) skewX(21deg);
+  border: 7px solid lime;
+  border-radius: 25px 190px 20px 100px;
+}
+
+#door {
+  position: relative;
+  width: 1.9px;
+  height: 107px;
+  left: 81px;
+  bottom: 190px;
+  background-color: black;
+  transform: skewX(28deg) skewY(30deg);
+}
+
+#front-lights {
+  position: relative;
+  width: 12px;
+  height: 23px;
+  bottom: 105px;
+  left: 253px;
+  background-color: white;
+  border: 0.5px solid green;
+  border-radius: 50% 50% 50% 50%;
+  transform: skewX(45deg) skewY(30deg);
+}
+
+.flash-light {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  top: 50%;
+  left: 50%;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 white;
+  animation: 2s flash-light-animation linear infinite;
+}
+
+@keyframes flash-light-animation {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 lightskyblue;
+  }
+  29% {
+    box-shadow: 5px 0 0 0 white;
+  }
+  35% {
+    box-shadow: 5px 0 50px 50px white;
+  }
+  38% {
+    box-shadow: 5px 0 0 0 white;
+  }
+  39% {
+    box-shadow: 0 0 0 0 lightskyblue;
+  }
+  51% {
+    box-shadow: 5px 0 0 0 white;
+  }
+  55% {
+    box-shadow: 5px 0 50px 50px white;
+  }
+  59% {
+    box-shadow: 5px 0 0 0 white;
+  }
+  60% {
+    box-shadow: 0 0 0 0 lightskyblue;
+  }
+}
+
+#rear-lights {
+  position: relative;
+  width: 10px;
+  height: 21px;
+  bottom: 134px;
+  left: 12px;
+  background-color: red;
+  transform: skewX(-47deg) skewY(30deg);
+  border: 0.5px solid green;
+  border-radius: 50% 50% 50% 50%;
+}
+
+#door-handle {
+  position: relative;
+  height: 5px;
+  width: 23px;
+  left: 85px;
+  bottom: 151px;
+  background: black;
+  border-radius: 35%;
+}
